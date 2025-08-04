@@ -11,7 +11,7 @@ export class MovieService {
       const script = await this.generateScript(request);
       
       // 2. Gerar cenas com imagens e áudio
-      const scenes = await this.generateScenes(script.scenes);
+      const scenes = await this.generateScenes(script.scenes, request.aspectRatio);
       
       // 3. Criar objeto do filme
       const movie: Movie = {
@@ -142,36 +142,27 @@ export class MovieService {
     return JSON.parse(jsonMatch[0]);
   }
   
-  private static async generateScenes(scriptScenes: any[]): Promise<MovieScene[]> {
+  private static async generateScenes(scriptScenes: any[], aspectRatio: '16:9' | '9:16' = '16:9'): Promise<MovieScene[]> {
     const scenes: MovieScene[] = [];
     
     for (let i = 0; i < scriptScenes.length; i++) {
       const scriptScene = scriptScenes[i];
       
       try {
-        // Gerar imagem usando API interna sem marca d'água
+        // Gerar imagem usando Pollinations.ai
         const visualPrompt = scriptScene.visualDescription || scriptScene.prompt;
         const enhancedPrompt = `${visualPrompt}, cinematic composition, high quality, detailed, professional cinematography, movie scene`;
         
-        // Usar API de geração integrada
-        const response = await fetch('/api/generate-image', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            prompt: enhancedPrompt,
-            width: 1024,
-            height: 1024,
-            model: 'flux.schnell'
-          }),
-        });
-
-        let imageUrl = "/placeholder.svg";
-        if (response.ok) {
-          const data = await response.json();
-          imageUrl = data.imageUrl || "/placeholder.svg";
-        }
+        // Codificar o prompt para URL
+        const encodedPrompt = encodeURIComponent(enhancedPrompt);
+        
+        // Definir dimensões baseadas no aspect ratio
+        const dimensions = aspectRatio === '16:9' 
+          ? { width: 1024, height: 576 }
+          : { width: 576, height: 1024 };
+        
+        // Usar Pollinations.ai
+        const imageUrl = `https://pollinations.ai/p/${encodedPrompt}?width=${dimensions.width}&height=${dimensions.height}&model=flux&enhance=true&nologo=true`;
         
         scenes.push({
           id: crypto.randomUUID(),
@@ -183,15 +174,18 @@ export class MovieService {
           visualDescription: scriptScene.visualDescription || scriptScene.prompt
         });
         
-        // Pequena pausa para não sobrecarregar a API
-        await new Promise(resolve => setTimeout(resolve, 500));
       } catch (error) {
         console.error(`Erro ao gerar cena ${i + 1}:`, error);
         // Continuar com placeholder se uma cena falhar
+        const encodedPrompt = encodeURIComponent(scriptScene.visualDescription || scriptScene.prompt);
+        const dimensions = aspectRatio === '16:9' 
+          ? { width: 1024, height: 576 }
+          : { width: 576, height: 1024 };
+        
         scenes.push({
           id: crypto.randomUUID(),
           prompt: scriptScene.visualDescription || scriptScene.prompt,
-          imageUrl: "/placeholder.svg",
+          imageUrl: `https://pollinations.ai/p/${encodedPrompt}?width=${dimensions.width}&height=${dimensions.height}&seed=${Math.floor(Math.random() * 10000)}&nologo=true&enhance=true`,
           audioUrl: "",
           duration: scriptScene.duration || 2,
           text: scriptScene.text,

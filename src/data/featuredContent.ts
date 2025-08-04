@@ -35,7 +35,7 @@ export const FEATURED_MOVIES: Movie[] = [
       {
         id: "exp-1",
         prompt: "Manaus harbor 1889",
-        imageUrl: "https://pollinations.ai/p/manaus%20harbor%201889%20historical%20brazil%20expedition%20preparation?width=1280&height=720&seed=5001",
+        imageUrl: "https://pollinations.ai/p/manaus%20harbor%201889%20historical%20brazil%20expedition%20preparation?width=1024&height=576&seed=5001&nologo=true&enhance=true",
         audioUrl: "",
         duration: 4,
         text: "Manaus, 1889. O porto fervilha de atividade. Vapores chegam carregados de borracha enquanto o Capitão Eduardo Santos verifica os últimos suprimentos para a expedição mais perigosa de sua vida.",
@@ -44,7 +44,7 @@ export const FEATURED_MOVIES: Movie[] = [
       {
         id: "exp-2",
         prompt: "Isabel examining ancient map",
-        imageUrl: "https://pollinations.ai/p/female%20archaeologist%20examining%20ancient%20jesuit%20map%201889%20brazil?width=1280&height=720&seed=5002",
+        imageUrl: "https://pollinations.ai/p/female%20archaeologist%20examining%20ancient%20jesuit%20map%201889%20brazil?width=1024&height=576&seed=5002&nologo=true&enhance=true",
         audioUrl: "",
         duration: 4,
         text: "Isabel Moreira: 'Este mapa jesuíta de 1750 indica uma cidade dourada três dias rio acima. Os símbolos sugerem uma civilização avançada.'",
@@ -53,7 +53,7 @@ export const FEATURED_MOVIES: Movie[] = [
       {
         id: "exp-3",
         prompt: "Indigenous guide Joaquim",
-        imageUrl: "https://pollinations.ai/p/indigenous%20brazilian%20guide%20warrior%20amazon%20forest%201889?width=1280&height=720&seed=5003",
+        imageUrl: "https://pollinations.ai/p/indigenous%20brazilian%20guide%20warrior%20amazon%20forest%201889?width=1024&height=576&seed=5003&nologo=true&enhance=true",
         audioUrl: "",
         duration: 4,
         text: "Joaquim: 'Meu povo conta histórias dessa cidade há gerações. Mas também falam dos guardiões que a protegem.'",
@@ -62,7 +62,7 @@ export const FEATURED_MOVIES: Movie[] = [
       {
         id: "exp-4",
         prompt: "Expedition team departing",
-        imageUrl: "https://pollinations.ai/p/brazilian%20expedition%20team%20departing%20amazon%20boats%201889%20adventure?width=1280&height=720&seed=5004",
+        imageUrl: "https://pollinations.ai/p/brazilian%20expedition%20team%20departing%20amazon%20boats%201889%20adventure?width=1024&height=576&seed=5004&nologo=true&enhance=true",
         audioUrl: "",
         duration: 4,
         text: "Com três canoas carregadas de suprimentos, a expedição parte em direção ao desconhecido, seguindo pistas centenárias.",
@@ -71,7 +71,7 @@ export const FEATURED_MOVIES: Movie[] = [
       {
         id: "exp-5",
         prompt: "Amazon river navigation",
-        imageUrl: "https://pollinations.ai/p/amazon%20river%20navigation%20expedition%20boats%20jungle%20canopy?width=1280&height=720&seed=5005",
+        imageUrl: "https://pollinations.ai/p/amazon%20river%20navigation%20expedition%20boats%20jungle%20canopy?width=1024&height=576&seed=5005&nologo=true&enhance=true",
         audioUrl: "",
         duration: 4,
         text: "Navegando pelos meandros do rio, a equipe adentra territórios inexplorados onde a selva guarda seus maiores segredos.",
@@ -1032,14 +1032,14 @@ const OSCAR_BASED_MOVIES: Movie[] = [
     scenes: Array.from({length: 30}, (_, i) => ({
       id: `parasita-${i+1}`,
       prompt: `Brazilian social thriller scene ${i+1}`,
-      imageUrl: `https://image.pollinations.ai/prompt/brazilian%20social%20thriller%20scene%20${i+1}%20parasita%20style%20cinema?width=1280&height=720&seed=${5100+i}&nologo=true`,
+      imageUrl: `https://pollinations.ai/p/brazilian%20social%20thriller%20scene%20${i+1}%20parasita%20style%20cinema?width=1024&height=576&seed=${5100+i}&nologo=true&enhance=true`,
       audioUrl: "",
       duration: 4,
       text: i === 0 ? "Em uma casa semi-subterrânea de São Paulo, a família Silva planeja sua ascensão social através de um esquema elaborado." : `Cena ${i+1} da trama psicológica que explora as divisões de classe no Brasil contemporâneo.`,
       visualDescription: `Scene ${i+1}: Brazilian social thriller with class division themes, cinematic composition`
     })),
     createdAt: "2024-01-07",
-    thumbnail: `https://image.pollinations.ai/prompt/movie%20poster%20parasita%20reflexos%20brazilian%20thriller%20social%20drama%209:16%20aspect%20ratio?width=768&height=1366&seed=5001&nologo=true`,
+    thumbnail: `https://pollinations.ai/p/movie%20poster%20parasita%20reflexos%20brazilian%20thriller%20social%20drama%209:16%20aspect%20ratio?width=576&height=1024&seed=5001&nologo=true&enhance=true`,
     aspectRatio: "9:16",
     type: "movie"
   },
