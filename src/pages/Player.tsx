@@ -7,7 +7,7 @@ import { Movie, Series } from "@/types/movie";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ArrowLeft, Film, Info, Tv } from "lucide-react";
-import { FEATURED_MOVIES, FEATURED_SERIES } from "@/data/featuredContent";
+import { FEATURED_MOVIES_COMPLETE, FEATURED_SERIES } from "@/data/featuredContent";
 
 export const Player = () => {
   const { movieId } = useParams<{ movieId: string }>();
@@ -28,7 +28,7 @@ export const Player = () => {
     
     // Se não encontrou nos salvos, verifica nos filmes em destaque
     if (!foundMovie) {
-      foundMovie = FEATURED_MOVIES.find(m => m.id === id);
+      foundMovie = FEATURED_MOVIES_COMPLETE.find(m => m.id === id);
     }
     
     // Se ainda não encontrou, verifica nos episódios de séries

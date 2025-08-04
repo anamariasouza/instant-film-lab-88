@@ -5,7 +5,7 @@ import { Layout } from "@/components/Layout";
 import { Play, Sparkles, Film, Tv } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Movie, Series } from "@/types/movie";
-import { FEATURED_MOVIES, FEATURED_SERIES } from "@/data/featuredContent";
+import { FEATURED_MOVIES_COMPLETE, FEATURED_SERIES } from "@/data/featuredContent";
 import movieBannersBg from "@/assets/movie-banners-bg.jpg";
 
 export const Home = () => {
@@ -59,7 +59,7 @@ export const Home = () => {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
-          {FEATURED_MOVIES.map((movie) => (
+          {FEATURED_MOVIES_COMPLETE.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>
