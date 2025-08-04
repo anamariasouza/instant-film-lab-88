@@ -7,7 +7,7 @@ import { Movie } from "@/types/movie";
 import { Link } from "react-router-dom";
 import { Library, Plus, Film, Star } from "lucide-react";
 import { toast } from "sonner";
-import { FEATURED_MOVIES } from "@/data/featuredContent";
+import { FEATURED_MOVIES_COMPLETE } from "@/data/featuredContent";
 
 export const MyMovies = () => {
   const [savedMovies, setSavedMovies] = useState<Movie[]>([]);
@@ -23,7 +23,7 @@ export const MyMovies = () => {
 
   const handleDelete = (movieId: string) => {
     // Não permitir deletar filmes em destaque
-    const isFeaturedMovie = FEATURED_MOVIES.some(movie => movie.id === movieId);
+    const isFeaturedMovie = FEATURED_MOVIES_COMPLETE.some(movie => movie.id === movieId);
     if (isFeaturedMovie) {
       toast.error("Não é possível excluir filmes em destaque!");
       return;
@@ -67,7 +67,7 @@ export const MyMovies = () => {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {FEATURED_MOVIES.map((movie) => (
+            {FEATURED_MOVIES_COMPLETE.map((movie) => (
               <MovieCard 
                 key={movie.id} 
                 movie={movie} 
