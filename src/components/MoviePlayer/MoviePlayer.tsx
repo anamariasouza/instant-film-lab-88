@@ -130,6 +130,21 @@ export const MoviePlayer = ({ movie }: MoviePlayerProps) => {
             <SkipBack className="w-8 h-8" />
           </Button>
           
+          {/* Central Play/Pause Button */}
+          <Button 
+            variant="ghost" 
+            size="lg"
+            onClick={isPlaying ? handlePause : handlePlay}
+            disabled={isLoading}
+            className="text-white hover:bg-white/30 rounded-full w-20 h-20 bg-black/40 hover:bg-black/60 border border-white/30 transition-all duration-200 hover:scale-105"
+          >
+            {isPlaying ? (
+              <Pause className="w-10 h-10 fill-white" />
+            ) : (
+              <Play className="w-10 h-10 fill-white ml-1" />
+            )}
+          </Button>
+          
           <Button 
             variant="ghost" 
             size="lg"

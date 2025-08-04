@@ -26,7 +26,8 @@ export class MovieService {
         createdAt: new Date().toISOString(),
         thumbnail: scenes[0]?.imageUrl,
         aspectRatio: request.aspectRatio,
-        type: 'movie'
+        type: 'movie',
+        soundtrack: this.generateSoundtrack(request.genre, request.style)
       };
       
       return movie;
@@ -226,6 +227,26 @@ export class MovieService {
     const savedMovies = this.getSavedMovies();
     const filtered = savedMovies.filter(movie => movie.id !== movieId);
     localStorage.setItem("ledtv_movies", JSON.stringify(filtered));
+  }
+
+  private static generateSoundtrack(genre: string, style: string): string {
+    // Gerar trilha sonora baseada no gênero e estilo
+    const soundtracks = {
+      'Ação': "https://www.soundjay.com/misc/sounds/action-epic-theme.mp3",
+      'Drama': "https://www.soundjay.com/misc/sounds/emotional-drama-theme.mp3", 
+      'Comédia': "https://www.soundjay.com/misc/sounds/upbeat-comedy-theme.mp3",
+      'Terror': "https://www.soundjay.com/misc/sounds/horror-suspense-theme.mp3",
+      'Romance': "https://www.soundjay.com/misc/sounds/romantic-orchestral.mp3",
+      'Ficção Científica': "https://www.soundjay.com/misc/sounds/sci-fi-futuristic.mp3",
+      'Fantasia': "https://www.soundjay.com/misc/sounds/magical-fantasy-theme.mp3",
+      'Thriller': "https://www.soundjay.com/misc/sounds/tension-thriller-theme.mp3",
+      'Aventura': "https://www.soundjay.com/misc/sounds/adventure-orchestral.mp3",
+      'Mistério': "https://www.soundjay.com/misc/sounds/mysterious-ambient.mp3",
+      'Musical': "https://www.soundjay.com/misc/sounds/broadway-musical-theme.mp3",
+      'Documentário': "https://www.soundjay.com/misc/sounds/documentary-background.mp3"
+    };
+    
+    return soundtracks[genre] || "https://www.soundjay.com/misc/sounds/cinematic-orchestral.mp3";
   }
 
   private static parseDurationToSeconds(duration: string): number {

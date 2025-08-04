@@ -308,7 +308,8 @@ export const FEATURED_MOVIES: Movie[] = [
     createdAt: "2024-01-01",
     thumbnail: amazoniaPerdidaPoster,
     aspectRatio: "16:9",
-    type: "movie"
+    type: "movie",
+    soundtrack: "https://www.soundjay.com/misc/sounds/adventure-epic-theme.mp3"
   },
   {
     id: "featured-2", 
@@ -462,7 +463,8 @@ export const FEATURED_MOVIES: Movie[] = [
     createdAt: "2024-01-01",
     thumbnail: segredosPantanalPoster,
     aspectRatio: "16:9",
-    type: "movie"
+    type: "movie",
+    soundtrack: "https://www.soundjay.com/misc/sounds/mystery-thriller-theme.mp3"
   },
   {
     id: "featured-3",
@@ -616,7 +618,8 @@ export const FEATURED_MOVIES: Movie[] = [
     createdAt: "2024-01-02",
     thumbnail: legendaCangaceiroPoster,
     aspectRatio: "16:9",
-    type: "movie"
+    type: "movie",
+    soundtrack: "https://www.soundjay.com/misc/sounds/cyberpunk-action-theme.mp3"
   },
   {
     id: "featured-4",
@@ -770,7 +773,8 @@ export const FEATURED_MOVIES: Movie[] = [
     createdAt: "2024-01-03",
     thumbnail: codigoQuantumPoster,
     aspectRatio: "16:9",
-    type: "movie"
+    type: "movie",
+    soundtrack: "https://www.soundjay.com/misc/sounds/sci-fi-electronic-theme.mp3"
   },
   {
     id: "featured-5",
@@ -924,7 +928,8 @@ export const FEATURED_MOVIES: Movie[] = [
     createdAt: "2024-01-04",
     thumbnail: coracaoIpanemaPoster,
     aspectRatio: "16:9",
-    type: "movie"
+    type: "movie",
+    soundtrack: "https://www.soundjay.com/misc/sounds/bossa-nova-romance-theme.mp3"
   }
 ];
 
@@ -1041,7 +1046,8 @@ const OSCAR_BASED_MOVIES: Movie[] = [
     createdAt: "2024-01-07",
     thumbnail: `https://pollinations.ai/p/movie%20poster%20parasita%20reflexos%20brazilian%20thriller%20social%20drama%209:16%20aspect%20ratio?width=576&height=1024&seed=5001&nologo=true&enhance=true`,
     aspectRatio: "9:16",
-    type: "movie"
+    type: "movie",
+    soundtrack: "https://www.soundjay.com/misc/sounds/psychological-thriller-theme.mp3"
   },
   {
     id: "oscar-2", 
@@ -1067,7 +1073,8 @@ const OSCAR_BASED_MOVIES: Movie[] = [
     createdAt: "2024-01-07",
     thumbnail: `https://image.pollinations.ai/prompt/movie%20poster%20moonlight%20sob%20lua%20carioca%20drama%20rio%20favela%209:16?width=768&height=1366&seed=5002&nologo=true`,
     aspectRatio: "9:16",
-    type: "movie"
+    type: "movie",
+    soundtrack: "https://www.soundjay.com/misc/sounds/moonlight-ambient-theme.mp3"
   },
   {
     id: "oscar-3",
@@ -1093,7 +1100,8 @@ const OSCAR_BASED_MOVIES: Movie[] = [
     createdAt: "2024-01-07",
     thumbnail: `https://image.pollinations.ai/prompt/movie%20poster%20o%20artista%20de%20rua%20sao%20paulo%201960s%20musical%20drama%209:16?width=768&height=1366&seed=5003&nologo=true`,
     aspectRatio: "9:16", 
-    type: "movie"
+    type: "movie",
+    soundtrack: "https://www.soundjay.com/misc/sounds/vintage-musical-theme.mp3"
   },
   {
     id: "oscar-4",
@@ -1119,7 +1127,8 @@ const OSCAR_BASED_MOVIES: Movie[] = [
     createdAt: "2024-01-07",
     thumbnail: `https://image.pollinations.ai/prompt/movie%20poster%20cidade%20sem%20lei%20sertao%20western%20thriller%209:16?width=768&height=1366&seed=5004&nologo=true`,
     aspectRatio: "9:16",
-    type: "movie"
+    type: "movie",
+    soundtrack: "https://www.soundjay.com/misc/sounds/western-sertao-theme.mp3"
   },
   {
     id: "oscar-5",
@@ -1145,7 +1154,8 @@ const OSCAR_BASED_MOVIES: Movie[] = [
     createdAt: "2024-01-07",
     thumbnail: `https://image.pollinations.ai/prompt/movie%20poster%20crash%20vidas%20cruzadas%20sao%20paulo%20social%20drama%209:16?width=768&height=1366&seed=5005&nologo=true`,
     aspectRatio: "9:16",
-    type: "movie"
+    type: "movie",
+    soundtrack: "https://www.soundjay.com/misc/sounds/urban-drama-theme.mp3"
   },
   {
     id: "oscar-6",
@@ -1171,7 +1181,8 @@ const OSCAR_BASED_MOVIES: Movie[] = [
     createdAt: "2024-01-07",
     thumbnail: `https://image.pollinations.ai/prompt/movie%20poster%20senhor%20aneis%20sociedade%20dourada%20brazil%20fantasy%209:16?width=768&height=1366&seed=5006&nologo=true`,
     aspectRatio: "9:16",
-    type: "movie"
+    type: "movie",
+    soundtrack: "https://www.soundjay.com/misc/sounds/epic-fantasy-orchestral.mp3"
   },
   {
     id: "oscar-7",
@@ -1539,5 +1550,35 @@ const OSCAR_BASED_MOVIES: Movie[] = [
   }
 ];
 
+// Adicionar trilhas sonoras aos filmes Oscar faltantes
+const OSCAR_MOVIES_WITH_SOUNDTRACKS = OSCAR_BASED_MOVIES.map((movie, index) => {
+  const soundtracks = [
+    "https://www.soundjay.com/misc/sounds/psychological-thriller-theme.mp3",
+    "https://www.soundjay.com/misc/sounds/moonlight-ambient-theme.mp3", 
+    "https://www.soundjay.com/misc/sounds/vintage-musical-theme.mp3",
+    "https://www.soundjay.com/misc/sounds/western-sertao-theme.mp3",
+    "https://www.soundjay.com/misc/sounds/urban-drama-theme.mp3",
+    "https://www.soundjay.com/misc/sounds/epic-fantasy-orchestral.mp3",
+    "https://www.soundjay.com/misc/sounds/mathematical-genius-theme.mp3",
+    "https://www.soundjay.com/misc/sounds/epic-cangaco-western.mp3",
+    "https://www.soundjay.com/misc/sounds/suburban-drama-theme.mp3",
+    "https://www.soundjay.com/misc/sounds/dystopian-thriller-theme.mp3",
+    "https://www.soundjay.com/misc/sounds/social-drama-orchestral.mp3",
+    "https://www.soundjay.com/misc/sounds/biopics-drama-theme.mp3",
+    "https://www.soundjay.com/misc/sounds/space-epic-orchestral.mp3",
+    "https://www.soundjay.com/misc/sounds/crime-drama-tension.mp3",
+    "https://www.soundjay.com/misc/sounds/war-epic-orchestral.mp3",
+    "https://www.soundjay.com/misc/sounds/imperial-historical-theme.mp3"
+  ];
+  
+  if (!movie.soundtrack) {
+    return {
+      ...movie,
+      soundtrack: soundtracks[index] || soundtracks[index % soundtracks.length]
+    };
+  }
+  return movie;
+});
+
 // Combinar filmes originais com filmes baseados no Oscar
-export const FEATURED_MOVIES_COMPLETE = [...FEATURED_MOVIES, ...OSCAR_BASED_MOVIES];
+export const FEATURED_MOVIES_COMPLETE = [...FEATURED_MOVIES, ...OSCAR_MOVIES_WITH_SOUNDTRACKS];

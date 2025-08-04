@@ -30,6 +30,7 @@ export interface Movie {
   episodeNumber?: number;
   seasonNumber?: number;
   totalEpisodes?: number;
+  soundtrack?: string; // URL da trilha sonora
 }
 
 export interface Series {
